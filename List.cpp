@@ -11,7 +11,7 @@ protected:
 public:
     List(List *copy){
         // Constructor copia
-        List::head = copy->head;
+        setHead(copy->getHead());
     }
 
     List(T* array, int n){
@@ -29,68 +29,166 @@ public:
     List(Node<T>* nodo){
         //Constructor por parametro,
         //retorna una lista con un nodo
-        List::head = nodo;
+        setHead(nodo);
     }
 
     List(int n){
         //Constructor por parametro,
         //retorna un lista de randoms de tamaño n
+
     }
 
-    List(void){
-        //Constructor por defecto
+    List()= default;
+
+    ~List()= default;
+
+    Node<T> *getHead() const {
+        return head;
     }
 
-    ~List(void){
+    void setHead(Node<T> *head) {
+        List::head = head;
     }
 
     // Retorna una referencia al primer elemento
-    T front(void) = 0;
+    T front(){ return this->getHead()->getValue();}
 
     // Retorna una referencia al ultimo elemento
-    T back(void) = 0;
+    T back(){
+        auto it = getHead();
+        while(it->getNext() != nullptr){
+            it = it->getNext();
+        }
+        return it->getValue();
+    }
 
     // Inserta un elemento al final
-    void push_back(const T& element) = 0;
+    void push_back(const T& element){
+        auto it = getHead();
+        while(it->getNext() != nullptr){
+            it = it->getNext();
+        }
+        it->setNext(new Node<T>(element));
+    }
 
     // Inserta un elemento al inicio
-    void push_front(const T& element) = 0;
+    void push_front(const T& element){
+        auto aux = getHead();
+        setHead(new Node<T>(element));
+        getHead()->setNext(aux);
+    }
 
     // Quita el ultimo elemento y retorna una referencia
-    T& pop_back(void) = 0;
+    T& pop_back(){
+        auto it = getHead();
+        while(it->getNext()->getNext() != nullptr){
+            it = it->getNext();
+        }
+        auto popped = it->getNext();
+        it->setNext(nullptr);
+        return popped->getValue();
+    }
 
     // Quita el primer elemento y retorna una referencia
-    T& pop_front(void) = 0;
+    T& pop_front(){
+        auto popped = getHead();
+        this->setHead(popped->getNext());
+        return popped->getValue();
+    }
 
     // Acceso aleatorio
-    T& operator[] (const int&) = 0;
+    T& operator[] (const int& n){
+        auto it = getHead();
+        for(int i = 0; i < n; i++){
+            it = it->getNext();
+        }
+        return it->getValue();
+    }
 
     // la lista esta vacia?
-    bool empty(void) = 0;
+    bool empty(){
+        return this->getHead() == nullptr;
+    }
 
     // retorna el tamaño de la lista
-    unsigned int size(void) = 0;
+    unsigned int size(){
+        int counter = 1;
+        auto it = getHead();
+        if(it != nullptr){
+            while(it->getNext()!= nullptr){
+                counter++;
+            }
+            return counter;
+        }else{
+            return 0;
+        }
+    }
 
     // Elimina toda la lista
-    void clear(void) = 0;
+    void clear(){
+        int n = size();
+        Node<T>* it;
+        for (int i = 0; i < n ; i++) {
+            it = getHead();
+            while(it->getNext()!= nullptr){
+                it->getNext();
+            }
+            delete it;
+        }
+    }
 
     // Elimina un elemento en base a un puntero
-    void erase(Node<T>*) = 0;
+    void erase(Node<T>* ptr){
+        ptr->setValue(NULL);
+    };
 
     // Inserta un elemento  en base a un puntero
-    void insert(Node<T>*, const T&) = 0;
+    void insert(Node<T>* ptr, const T& element){
+        ptr->setValue(element);
+    }
 
     // Elimina todos los elementos por similitud
-    void remove(const T&) = 0;
+    void remove(const T& element){
+        auto it = getHead();
+        while(it->getNext()!= nullptr){
+            if(it->getValue()==element){
+                it->setValue(NULL);
+            }
+        }
+    }
 
     // ordena la lista
-    List& sort(void) = 0;
+    List& sort() = 0;
 
     // invierte la lista
-    List& reverse(void) = 0;
+    List& reverse(){
+        Node<T>* newHead = nullptr;
+        int n = size();
+        Node<T>* it, newIt;
+        for (int i = 0; i < n ; i++) {
+            it = getHead();
+            while(it->getNext()!= nullptr){
+                it->getNext();
+            }
+            if(i == 0){
+                newHead = it;
+                newIt = newHead;
+            }else{
+                newIt->setNext(it);
+                newIt = it;
+            }
+        }
+        this->setHead(newHead);
+    }
 
     // Imprime la lista con cout
     template<typename __T>
     inline friend std::ostream& operator<<
-            (std::ostream& , const List<__T>& );
-}
+            (std::ostream& cd, const List<__T>& list){
+        int n = list.size();
+        for(int i = 0; i < n; i++ ){
+            cd<<list[i]<<" ";
+        }
+        cd<<"\n";
+    };
+};

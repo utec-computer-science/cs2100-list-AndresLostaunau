@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/List.cpp">
+			<Option target="cs2100_list_AndresLostaunau"/>
+		</Unit>
+		<Unit filename="C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/Node.cpp">
+			<Option target="cs2100_list_AndresLostaunau"/>
+		</Unit>
 		<Unit filename="C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/main.cpp">
 			<Option target="cs2100_list_AndresLostaunau"/>
 		</Unit>

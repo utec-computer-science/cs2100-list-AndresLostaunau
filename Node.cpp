@@ -5,12 +5,15 @@ protected:
     Node<T> * next;
 
 public:
-    Node()= default;
+    Node(){Node::next = nullptr;};
 
-    Node(T value){Node::value = value;};
+    Node(T value){
+        Node::value = value;
+        Node::next = nullptr;
+    };
 
     T getValue() const {
-
+        return Node::value;
     }
 
     void setValue(T value) {
