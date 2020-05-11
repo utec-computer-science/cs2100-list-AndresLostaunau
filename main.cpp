@@ -21,6 +21,10 @@ int main (int, char*[]){
     t2->pop_back();
     t2->pop_front();
     std::cout<<*t2;
+    //Test 3 (Trait sort y random)
+    auto t3 = new List<T3type>(10);
+    std::cout<<*t3;
+    t3->sort();
+    std::cout<<*t3;
     return 1;
-    //Test 3 
 }

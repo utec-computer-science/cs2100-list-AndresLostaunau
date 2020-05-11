@@ -198,8 +198,7 @@ public:
     }
 
     // Imprime la lista con cout
-    template<typename __T>
-    inline friend std::ostream& operator<<(std::ostream& cd, List<__T>& list){
+    inline friend std::ostream& operator<<(std::ostream& cd, List<T>& list){
         unsigned int n = list.size();
         for(int i = 0; i < n; i++){
             cd<<list[i]<<" ";
@@ -212,17 +211,195 @@ public:
 
 template <>
 class List<int>{
+protected:
+    Node<int> *head;
+
 public:
     List(int n){
         srand(time(NULL));
         Node<int>* aux = nullptr;
+        Node<int>* it = nullptr;
         for(int i = 0; i < n; ++i){
-            aux = new Node<int>(rand());
+            aux = new Node<int>(rand()%100);
             if(i == 0){
-
+                setHead(aux);
+                it = getHead();
             }else{
-
+                it->setNext(aux);
+                it = it->getNext();
             }
         }
     }
+    List(List *copy){
+        // Constructor copia
+        unsigned int n = copy->size();
+        if(n != 0){
+            setHead(new Node<int>(copy->getHead()->getValue()));
+            Node<int>* it_copy = copy->getHead()->getNext();
+            for(int i = 1; i < n; i++){
+                push_back(it_copy->getValue());
+                it_copy = it_copy->getNext();
+            }
+        }else{
+            setHead(nullptr);
+        }
+
+    }
+
+    List(int* array, int n){
+        //Constructor  parametro,
+        //llena una lista a partir de un array
+        auto it = new Node<int>(array[0]);
+        setHead(it);
+        for(int i = 1; i < n; i++){
+            it->setNext(new Node<int>(array[i]));
+            it = it->getNext();
+        }
+    }
+
+    List(Node<int>* nodo){
+        //Constructor por parametro,
+        //retorna una lista con un nodo
+        setHead(nodo);
+    }
+
+    List()= default;
+
+    ~List()= default;
+
+    Node<int> *getHead() const {
+        return head;
+    }
+
+    void setHead(Node<int> *head) {
+        List::head = head;
+    }
+
+    // Retorna una referencia al primer elemento
+    int front(){ return this->getHead()->getValue();}
+
+    // Retorna una referencia al ultimo elemento
+    int back(){
+        auto it = getHead();
+        while(it->getNext() != nullptr){
+            it = it->getNext();
+        }
+        return it->getValue();
+    }
+
+    // Inserta un elemento al final
+    void push_back(const int& element){
+        auto it = getHead();
+        while(it->getNext() != nullptr){
+            it = it->getNext();
+        }
+        it->setNext(new Node<int>(element));
+    }
+
+    // Inserta un elemento al inicio
+    void push_front(const int& element){
+        auto new_node = new Node<int>(element);
+        new_node->setNext(new Node<int>(getHead()));
+        setHead(new_node);
+    }
+
+    // Quita el ultimo elemento y retorna una referencia
+    int pop_back(){
+        auto it = getHead();
+        while(it->getNext()->getNext() != nullptr){
+            it = it->getNext();
+        }
+        auto popped = it->getNext();
+        it->setNext(nullptr);
+        return popped->getValue();
+    }
+
+    // Quita el primer elemento y retorna una referencia
+    int pop_front(){
+        auto popped = getHead();
+        this->setHead(popped->getNext());
+        return popped->getValue();
+    }
+
+    // Acceso aleatorio
+    int operator[] (int n){
+        auto it = getHead();
+        for(int i = 0; i < n; i++){
+            it = it->getNext();
+        }
+        return it->getValue();
+    }
+
+    // la lista esta vacia?
+    bool empty(){
+        return this->getHead() == nullptr;
+    }
+
+    // retorna el tamaño de la lista
+    unsigned int size(){
+        int counter = 1;
+        auto it = getHead();
+        if(it != nullptr){
+            while(it->getNext()!= nullptr){
+                counter++;
+                it = it->getNext();
+            }
+            return counter;
+        }else{
+            return 0;
+        }
+    }
+
+    // Elimina toda la lista
+    void clear(){
+        int n = size();
+        Node<int>* it;
+        for (int i = 0; i < n ; i++) {
+            it = getHead();
+            while(it->getNext()!= nullptr){
+                it->getNext();
+            }
+            delete it;
+        }
+    }
+
+    // Inserta un elemento  en base a un puntero
+    void insert(Node<int>* ptr, const int& element){
+        ptr->setValue(element);
+    }
+
+
+    // ordena la lista
+    void sort(){
+        int n = size();
+        int aux_array[n];
+        int aux;
+        auto it = getHead();
+        for(int i = 0; i < n; i++){
+            aux_array[i] = it->getValue();
+            it = it->getNext();
+        }
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(aux_array[i]>aux_array[j]){
+                    aux = aux_array[i];
+                    aux_array[i] = aux_array[j];
+                    aux_array[j] = aux;
+                }
+            }
+        }
+        auto newList = new List(aux_array,n);
+        setHead(newList->getHead());
+    };
+
+
+    // Imprime la lista con cout
+    inline friend std::ostream& operator<<(std::ostream& cd, List<int>& list){
+        unsigned int n = list.size();
+        for(int i = 0; i < n; i++){
+            cd<<list[i]<<" ";
+        }
+        cd<<"\n";
+        return cd;
+    };
 };
