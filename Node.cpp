@@ -12,6 +12,11 @@ public:
         Node::next = nullptr;
     };
 
+    Node(Node* copy){
+        Node::value = copy->getValue();
+        Node::next = copy->getNext();
+    }
+
     T getValue() const {
         return Node::value;
     }
@@ -30,12 +35,12 @@ public:
 
     ~Node(){
     }
-
+    /*
     template<typename _T>
-    friend Node<_T>* operator ++(Node<_T>* nodo){
+    Node<_T>& operator ++(Node<_T>& nodo){
         nodo = nodo->getNext();
         return nodo;
-    }
+    }*/
 };
 
 template <typename T>
@@ -64,9 +69,8 @@ public:
     }
 
     template<typename _T>
-    friend Node<_T>* operator --(Node<_T>* nodo){
+    void operator --(Node<_T>& nodo){
         nodo = nodo->getPrev();
-        return nodo;
     }
 };
 

@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/CircleList.cpp
+List.cpp
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/List.cpp
+
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/DoubleCircleList.cpp
+DoubleList.cpp
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/DoubleList.cpp
+
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/DoubleList.cpp
+CircleList.cpp
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/CircleList.cpp
+
 C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/List.cpp
 iostream
 -
@@ -25,6 +37,6 @@ C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/Node.cpp
 C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/main.cpp
 iostream
 -
-List.cpp
-C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/List.cpp
+DoubleCircleList.cpp
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/DoubleCircleList.cpp
 

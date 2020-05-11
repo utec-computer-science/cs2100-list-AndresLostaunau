@@ -16,9 +16,10 @@ public:
         unsigned int n = copy->size();
         if(n != 0){
             setHead(new Node<T>(copy->getHead()->getValue()));
-            Node<T>* it_copy = copy->getHead();
+            Node<T>* it_copy = copy->getHead()->getNext();
             for(int i = 1; i < n; i++){
-                push_back(it_copy[i].getValue());
+                push_back(it_copy->getValue());
+                it_copy = it_copy->getNext();
             }
         }else{
             setHead(nullptr);
@@ -30,12 +31,11 @@ public:
         //Constructor  parametro,
         //llena una lista a partir de un array
         auto it = new Node<T>(array[0]);
-        List::head = it;
-        for(int i = 0; i < n-1; i++){
+        setHead(it);
+        for(int i = 1; i < n; i++){
             it->setNext(new Node<T>(array[i]));
             it = it->getNext();
         }
-        it->setNext(nullptr);
     }
 
     List(Node<T>* nodo){
@@ -85,13 +85,13 @@ public:
 
     // Inserta un elemento al inicio
     void push_front(const T& element){
-        auto aux = getHead();
-        setHead(new Node<T>(element));
-        getHead()->setNext(aux);
+        auto new_node = new Node<T>(element);
+        new_node->setNext(new Node<T>(getHead()));
+        setHead(new_node);
     }
 
     // Quita el ultimo elemento y retorna una referencia
-    T& pop_back(){
+    T pop_back(){
         auto it = getHead();
         while(it->getNext()->getNext() != nullptr){
             it = it->getNext();
@@ -102,17 +102,17 @@ public:
     }
 
     // Quita el primer elemento y retorna una referencia
-    T& pop_front(){
+    T pop_front(){
         auto popped = getHead();
         this->setHead(popped->getNext());
         return popped->getValue();
     }
 
     // Acceso aleatorio
-    T& operator[] (int& n){
+    T operator[] (int n){
         auto it = getHead();
         for(int i = 0; i < n; i++){
-            it++;
+            it = it->getNext();
         }
         return it->getValue();
     }
@@ -199,7 +199,7 @@ public:
 
     // Imprime la lista con cout
     template<typename __T>
-    inline friend std::ostream& operator<<(std::ostream& cd, const List<__T>& list){
+    inline friend std::ostream& operator<<(std::ostream& cd, List<__T>& list){
         unsigned int n = list.size();
         for(int i = 0; i < n; i++){
             cd<<list[i]<<" ";
@@ -225,6 +225,4 @@ public:
             }
         }
     }
-
-    //List& sort()= 0;
 };

@@ -1,4 +1,4 @@
-#include "List.cpp"
+#include "CircleList.cpp"
 
 template <typename T>
 class DoubleList{
@@ -14,7 +14,7 @@ public:
             DoubleNode<T>* it_copy = copy->getHead();
             for(int i = 1; i < n; i++){
                 push_back(it_copy->getValue());
-                it_copy++;
+                it_copy = it_copy->getNext();
             }
         }else{
             setHead(nullptr);
@@ -59,14 +59,14 @@ public:
         int n = list->size();
         if(n!=0){
             doubled->setHead(new DoubleNode<T>(list_it->getValue()));
-            list_it++;
+            list_it = list_it->getNext();
             d_it = doubled->getHead();
             for(int i = 1; i < n; i++){
                 d_it->setNext(new DoubleNode<T>(list_it->getValue()));
                 d_it->getNext()->setPrev(d_it);
-                d_it++;
+                d_it = d_it->getNext();
                 if(i!=n-1){
-                    list_it++;
+                    list_it = list_it->getNext();
                 }
             }
         }
@@ -110,7 +110,7 @@ public:
     }
 
     // Quita el ultimo elemento y retorna una referencia
-    T& pop_back(){
+    T pop_back(){
         auto it = getHead();
         while(it->getNext()->getNext() != nullptr){
             it = it->getNext();
@@ -121,7 +121,7 @@ public:
     }
 
     // Quita el primer elemento y retorna una referencia
-    T& pop_front(){
+    T pop_front(){
         auto popped = getHead();
         this->setHead(popped->getNext());
         return popped->getValue();
