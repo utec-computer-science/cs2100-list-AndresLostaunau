@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/List.cpp
+iostream
+-
+iterator
+-
+vector
+-
+random
+-
+ctime
+-
+Node.cpp
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/Node.cpp
+
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/Node.cpp
+
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/main.cpp
+iostream
+-
+List.cpp
+C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/List.cpp
+

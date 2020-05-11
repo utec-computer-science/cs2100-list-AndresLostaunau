@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iterator>
 #include <vector>
+#include <random>
+#include <ctime>
 #include "Node.cpp"
 
 template <typename T>
@@ -11,13 +13,24 @@ protected:
 public:
     List(List *copy){
         // Constructor copia
-        setHead(copy->getHead());
+        unsigned int n = copy->size();
+        if(n != 0){
+            setHead(new Node<T>(copy->getHead()->getValue()));
+            Node<T>* it_copy = copy->getHead();
+            Node<T>* it_new = getHead();
+            for(int i = 1; i < n; i++){
+                push_back(it_copy[i]);
+            }
+        }else{
+            setHead(nullptr);
+        }
+
     }
 
     List(T* array, int n){
         //Constructor  parametro,
         //llena una lista a partir de un array
-        Node<T>* it = Node<T>(array[0]);
+        auto it = new Node<T>(array[0]);
         List::head = it;
         for(int i = 0; i < n-1; i++){
             it->setNext(Node<T>(array[i]));
@@ -158,7 +171,9 @@ public:
     }
 
     // ordena la lista
-    List& sort() = 0;
+    List& sort(){
+        std::cout<<"Can't sort this type of list\n";
+    };
 
     // invierte la lista
     List& reverse(){
@@ -180,7 +195,7 @@ public:
         }
         this->setHead(newHead);
     }
-
+    /*
     // Imprime la lista con cout
     template<typename __T>
     inline friend std::ostream& operator<<
@@ -190,5 +205,26 @@ public:
             cd<<list[i]<<" ";
         }
         cd<<"\n";
-    };
+        return 0;
+    };*/
+};
+
+
+template <>
+class List<int>{
+public:
+    List(int n){
+        srand(time(NULL));
+        Node<int>* aux = nullptr;
+        for(int i = 0; i < n; ++i){
+            aux = new Node<int>(rand());
+            if(i == 0){
+
+            }else{
+
+            }
+        }
+    }
+
+    //List& sort()= 0;
 };
