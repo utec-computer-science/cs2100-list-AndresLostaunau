@@ -1,24 +1,20 @@
-#include <iostream>
-#include <iterator>
-#include <vector>
-#include <random>
-#include <ctime>
-#include "Node.cpp"
+#include "List.cpp"
 
 template <typename T>
-class List {
+class DoubleList{
 protected:
-    Node<T> *head;
+    DoubleNode<T> *head;
 
 public:
-    List(List *copy){
+    DoubleList(DoubleList *copy){
         // Constructor copia
         unsigned int n = copy->size();
         if(n != 0){
-            setHead(new Node<T>(copy->getHead()->getValue()));
-            Node<T>* it_copy = copy->getHead();
+            setHead(new DoubleNode<T>(copy->getHead()->getValue()));
+            DoubleNode<T>* it_copy = copy->getHead();
             for(int i = 1; i < n; i++){
-                push_back(it_copy[i].getValue());
+                push_back(it_copy->getValue());
+                it_copy++;
             }
         }else{
             setHead(nullptr);
@@ -26,40 +22,58 @@ public:
 
     }
 
-    List(T* array, int n){
+
+
+    DoubleList(T* array, int n){
         //Constructor  parametro,
         //llena una lista a partir de un array
-        auto it = new Node<T>(array[0]);
-        List::head = it;
-        for(int i = 0; i < n-1; i++){
-            it->setNext(new Node<T>(array[i]));
-            it = it->getNext();
-        }
-        it->setNext(nullptr);
+        auto list_aux = new List<T>(array, n);
+        
     }
 
-    List(Node<T>* nodo){
+    DoubleList(Node<T>* nodo){
         //Constructor por parametro,
         //retorna una lista con un nodo
         setHead(nodo);
     }
 
-    List(int n){
+    DoubleList(int n){
         //Constructor por parametro,
         //retorna un lista de randoms de tamaño n
 
     }
 
-    List()= default;
+    DoubleList()= default;
 
-    ~List()= default;
+    ~DoubleList()= default;
 
-    Node<T> *getHead() const {
+    DoubleList* DoubleLink(List<T>* list){
+        auto doubled = new DoubleList();
+        Node<T>* list_it = list->getHead();
+        DoubleNode<T>* d_it = nullptr;
+        int n = list->size();
+        if(n!=0){
+            doubled->setHead(new DoubleNode<T>(list_it->getValue()));
+            list_it++;
+            d_it = doubled->getHead();
+            for(int i = 0; i < n; i++){
+                d_it->setNext(new DoubleNode<T>(list_it->getValue()));
+                d_it->getNext()->setPrev(d_it);
+                d_it++;
+                if(i!=n-1){
+                    list_it++;
+                }
+            }
+        }
+        return doubled;
+    }
+
+    DoubleNode<T> *getHead() const {
         return head;
     }
 
-    void setHead(Node<T> *head) {
-        List::head = head;
+    void setHead(DoubleNode<T> *head) {
+        DoubleList::head = head;
     }
 
     // Retorna una referencia al primer elemento
@@ -112,7 +126,7 @@ public:
     T& operator[] (int& n){
         auto it = getHead();
         for(int i = 0; i < n; i++){
-            it++;
+            it = it->getNext();
         }
         return it->getValue();
     }
@@ -140,7 +154,7 @@ public:
     // Elimina toda la lista
     void clear(){
         int n = size();
-        Node<T>* it;
+        DoubleNode<T>* it;
         for (int i = 0; i < n ; i++) {
             it = getHead();
             while(it->getNext()!= nullptr){
@@ -151,12 +165,12 @@ public:
     }
 
     // Elimina un elemento en base a un puntero
-    void erase(Node<T>* ptr){
+    void erase(DoubleNode<T>* ptr){
         ptr->setValue(NULL);
     };
 
     // Inserta un elemento  en base a un puntero
-    void insert(Node<T>* ptr, const T& element){
+    void insert(DoubleNode<T>* ptr, const T& element){
         ptr->setValue(element);
     }
 
@@ -177,10 +191,10 @@ public:
     };
 
     // invierte la lista
-    List& reverse(){
-        Node<T>* newHead = nullptr;
+    DoubleList& reverse(){
+        DoubleNode<T>* newHead = nullptr;
         int n = size();
-        Node<T>* it, newIt;
+        DoubleNode<T>* it, newIt;
         for (int i = 0; i < n ; i++) {
             it = getHead();
             while(it->getNext()!= nullptr){
@@ -207,24 +221,4 @@ public:
         cd<<"\n";
         return cd;
     };
-};
-
-
-template <>
-class List<int>{
-public:
-    List(int n){
-        srand(time(NULL));
-        Node<int>* aux = nullptr;
-        for(int i = 0; i < n; ++i){
-            aux = new Node<int>(rand());
-            if(i == 0){
-
-            }else{
-
-            }
-        }
-    }
-
-    //List& sort()= 0;
 };
