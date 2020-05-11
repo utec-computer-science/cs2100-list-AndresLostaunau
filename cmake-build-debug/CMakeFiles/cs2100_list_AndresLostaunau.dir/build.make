@@ -95,11 +95,53 @@ CMakeFiles/cs2100_list_AndresLostaunau.dir/List.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs2100_list_AndresLostaunau.dir/List.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\List.cpp -o CMakeFiles\cs2100_list_AndresLostaunau.dir\List.cpp.s
 
+CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.obj: CMakeFiles/cs2100_list_AndresLostaunau.dir/flags.make
+CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.obj: ../DoubleList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cs2100_list_AndresLostaunau.dir\DoubleList.cpp.obj -c C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\DoubleList.cpp
+
+CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\DoubleList.cpp > CMakeFiles\cs2100_list_AndresLostaunau.dir\DoubleList.cpp.i
+
+CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\DoubleList.cpp -o CMakeFiles\cs2100_list_AndresLostaunau.dir\DoubleList.cpp.s
+
+CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.obj: CMakeFiles/cs2100_list_AndresLostaunau.dir/flags.make
+CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.obj: ../CircleList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cs2100_list_AndresLostaunau.dir\CircleList.cpp.obj -c C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\CircleList.cpp
+
+CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\CircleList.cpp > CMakeFiles\cs2100_list_AndresLostaunau.dir\CircleList.cpp.i
+
+CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\CircleList.cpp -o CMakeFiles\cs2100_list_AndresLostaunau.dir\CircleList.cpp.s
+
+CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.obj: CMakeFiles/cs2100_list_AndresLostaunau.dir/flags.make
+CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.obj: ../DoubleCircleList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cs2100_list_AndresLostaunau.dir\DoubleCircleList.cpp.obj -c C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\DoubleCircleList.cpp
+
+CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\DoubleCircleList.cpp > CMakeFiles\cs2100_list_AndresLostaunau.dir\DoubleCircleList.cpp.i
+
+CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\DoubleCircleList.cpp -o CMakeFiles\cs2100_list_AndresLostaunau.dir\DoubleCircleList.cpp.s
+
 # Object files for target cs2100_list_AndresLostaunau
 cs2100_list_AndresLostaunau_OBJECTS = \
 "CMakeFiles/cs2100_list_AndresLostaunau.dir/main.cpp.obj" \
 "CMakeFiles/cs2100_list_AndresLostaunau.dir/Node.cpp.obj" \
-"CMakeFiles/cs2100_list_AndresLostaunau.dir/List.cpp.obj"
+"CMakeFiles/cs2100_list_AndresLostaunau.dir/List.cpp.obj" \
+"CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.obj" \
+"CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.obj" \
+"CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.obj"
 
 # External object files for target cs2100_list_AndresLostaunau
 cs2100_list_AndresLostaunau_EXTERNAL_OBJECTS =
@@ -107,11 +149,14 @@ cs2100_list_AndresLostaunau_EXTERNAL_OBJECTS =
 cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/main.cpp.obj
 cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/Node.cpp.obj
 cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/List.cpp.obj
+cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.obj
+cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.obj
+cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.obj
 cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/build.make
 cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/linklibs.rsp
 cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/objects1.rsp
 cs2100_list_AndresLostaunau.exe: CMakeFiles/cs2100_list_AndresLostaunau.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable cs2100_list_AndresLostaunau.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\alost\Documents\GitHub\cs2100-list-AndresLostaunau\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable cs2100_list_AndresLostaunau.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\cs2100_list_AndresLostaunau.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

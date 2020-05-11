@@ -4,6 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/CircleList.cpp" "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/cmake-build-debug/CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.obj"
+  "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/DoubleCircleList.cpp" "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/cmake-build-debug/CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.obj"
+  "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/DoubleList.cpp" "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/cmake-build-debug/CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.obj"
   "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/List.cpp" "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/cmake-build-debug/CMakeFiles/cs2100_list_AndresLostaunau.dir/List.cpp.obj"
   "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/Node.cpp" "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/cmake-build-debug/CMakeFiles/cs2100_list_AndresLostaunau.dir/Node.cpp.obj"
   "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/main.cpp" "C:/Users/alost/Documents/GitHub/cs2100-list-AndresLostaunau/cmake-build-debug/CMakeFiles/cs2100_list_AndresLostaunau.dir/main.cpp.obj"

@@ -1,5 +1,6 @@
 #include <iostream>
-#include "DoubleList.cpp"
+#include "DoubleCircleList.cpp"
+#include "CircleList.cpp"
 
 char t1Array[6] = {'p','r','u','e','b','a'};
 typedef char T1type;

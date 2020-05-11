@@ -22,13 +22,18 @@ public:
 
     }
 
+    DoubleList(List<T> *copy){
+        auto list_aux = new List<T>(copy);
+        this = DoubleLink(list_aux);
+    }
+
 
 
     DoubleList(T* array, int n){
         //Constructor  parametro,
         //llena una lista a partir de un array
         auto list_aux = new List<T>(array, n);
-        
+        this = DoubleLink(list_aux);
     }
 
     DoubleList(Node<T>* nodo){
@@ -56,7 +61,7 @@ public:
             doubled->setHead(new DoubleNode<T>(list_it->getValue()));
             list_it++;
             d_it = doubled->getHead();
-            for(int i = 0; i < n; i++){
+            for(int i = 1; i < n; i++){
                 d_it->setNext(new DoubleNode<T>(list_it->getValue()));
                 d_it->getNext()->setPrev(d_it);
                 d_it++;

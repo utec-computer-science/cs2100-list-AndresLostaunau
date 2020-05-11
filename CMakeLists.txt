@@ -3,4 +3,4 @@ project(cs2100_list_AndresLostaunau)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cs2100_list_AndresLostaunau main.cpp Node.cpp List.cpp DoubleList.cpp)
+add_executable(cs2100_list_AndresLostaunau main.cpp Node.cpp List.cpp DoubleList.cpp CircleList.cpp DoubleCircleList.cpp)
