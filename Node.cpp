@@ -2,20 +2,10 @@ template <typename T>
 class Node {
 protected:
     T value;
-    Node<T> * next;
 
 public:
-    Node(){Node::next = nullptr;};
-
-    Node(T value){
-        Node::value = value;
-        Node::next = nullptr;
-    };
-
-    Node(Node* copy){
-        Node::value = copy->getValue();
-        Node::next = copy->getNext();
-    }
+    Node()= default;
+    Node(T _value){Node::value=_value;}
 
     T getValue() const {
         return Node::value;
@@ -24,16 +14,42 @@ public:
     void setValue(T value) {
         Node::value = value;
     }
+/*
+    Node* getNext()= default;
+    Node* setNext(Node* n)= default;
+    Node* getPrev()= default;
+    Node* setPrev(Node* n)= default;*/
 
-    Node<T> *getNext() const {
+};
+
+template <typename T>
+class SingleNode: public Node<T>{
+private:
+    SingleNode<T> * next;
+
+public:
+    SingleNode(){SingleNode::next = nullptr;};
+
+    SingleNode(T value){
+        SingleNode::value = value;
+        SingleNode::next = nullptr;
+    };
+
+    SingleNode(SingleNode* copy){
+        SingleNode::value = copy->getValue();
+        SingleNode::next = copy->getNext();
+    }
+
+
+    SingleNode<T> *getNext() const {
         return next;
     }
 
-    void setNext(Node<T> *next) {
-        Node::next = next;
+    void setNext(SingleNode<T> *next) {
+        SingleNode::next = next;
     }
 
-    ~Node(){
+    ~SingleNode(){
     }
     /*
     template<typename _T>
@@ -44,9 +60,9 @@ public:
 };
 
 template <typename T>
-class DoubleNode: public Node<T>{
+class DoubleNode: public SingleNode<T>{
 protected:
-    Node<T>* prev;
+    SingleNode<T>* prev;
 
 public:
     DoubleNode(){
@@ -60,16 +76,16 @@ public:
         DoubleNode::prev = nullptr;
     }
 
-    Node<T> *getPrev() const {
+    SingleNode<T> *getPrev() const {
         return prev;
     }
 
-    void setPrev(Node<T> *prev) {
+    void setPrev(SingleNode<T> *prev) {
         DoubleNode::prev = prev;
     }
 
     template<typename _T>
-    void operator --(Node<_T>& nodo){
+    void operator --(SingleNode<_T>& nodo){
         nodo = nodo->getPrev();
     }
 };

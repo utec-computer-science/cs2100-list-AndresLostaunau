@@ -5,18 +5,20 @@
 #include <ctime>
 #include "Node.cpp"
 
+
+
 template <typename T>
 class List {
 protected:
-    Node<T> *head;
+    SingleNode<T> *head;
 
 public:
     List(List *copy){
         // Constructor copia
         unsigned int n = copy->size();
         if(n != 0){
-            setHead(new Node<T>(copy->getHead()->getValue()));
-            Node<T>* it_copy = copy->getHead()->getNext();
+            setHead(new SingleNode<T>(copy->getHead()->getValue()));
+            SingleNode<T>* it_copy = copy->getHead()->getNext();
             for(int i = 1; i < n; i++){
                 push_back(it_copy->getValue());
                 it_copy = it_copy->getNext();
@@ -30,15 +32,15 @@ public:
     List(T* array, int n){
         //Constructor  parametro,
         //llena una lista a partir de un array
-        auto it = new Node<T>(array[0]);
+        auto it = new SingleNode<T>(array[0]);
         setHead(it);
         for(int i = 1; i < n; i++){
-            it->setNext(new Node<T>(array[i]));
+            it->setNext(new SingleNode<T>(array[i]));
             it = it->getNext();
         }
     }
 
-    List(Node<T>* nodo){
+    List(SingleNode<T>* nodo){
         //Constructor por parametro,
         //retorna una lista con un nodo
         setHead(nodo);
@@ -54,11 +56,11 @@ public:
 
     ~List()= default;
 
-    Node<T> *getHead() const {
+    SingleNode<T> *getHead() const {
         return head;
     }
 
-    void setHead(Node<T> *head) {
+    void setHead(SingleNode<T> *head) {
         List::head = head;
     }
 
@@ -80,13 +82,13 @@ public:
         while(it->getNext() != nullptr){
             it = it->getNext();
         }
-        it->setNext(new Node<T>(element));
+        it->setNext(new SingleNode<T>(element));
     }
 
     // Inserta un elemento al inicio
     void push_front(const T& element){
-        auto new_node = new Node<T>(element);
-        new_node->setNext(new Node<T>(getHead()));
+        auto new_node = new SingleNode<T>(element);
+        new_node->setNext(new SingleNode<T>(getHead()));
         setHead(new_node);
     }
 
@@ -140,7 +142,7 @@ public:
     // Elimina toda la lista
     void clear(){
         int n = size();
-        Node<T>* it;
+        SingleNode<T>* it;
         for (int i = 0; i < n ; i++) {
             it = getHead();
             while(it->getNext()!= nullptr){
@@ -151,12 +153,12 @@ public:
     }
 
     // Elimina un elemento en base a un puntero
-    void erase(Node<T>* ptr){
+    void erase(SingleNode<T>* ptr){
         ptr->setValue(NULL);
     };
 
     // Inserta un elemento  en base a un puntero
-    void insert(Node<T>* ptr, const T& element){
+    void insert(SingleNode<T>* ptr, const T& element){
         ptr->setValue(element);
     }
 
@@ -178,9 +180,9 @@ public:
 
     // invierte la lista
     List& reverse(){
-        Node<T>* newHead = nullptr;
+        SingleNode<T>* newHead = nullptr;
         int n = size();
-        Node<T>* it, newIt;
+        SingleNode<T>* it, newIt;
         for (int i = 0; i < n ; i++) {
             it = getHead();
             while(it->getNext()!= nullptr){
@@ -208,19 +210,19 @@ public:
     };
 };
 
-
+/*
 template <>
 class List<int>{
 protected:
-    Node<int> *head;
+    SingleNode<int> *head;
 
 public:
     List(int n){
         srand(time(NULL));
-        Node<int>* aux = nullptr;
-        Node<int>* it = nullptr;
+        SingleNode<int>* aux = nullptr;
+        SingleNode<int>* it = nullptr;
         for(int i = 0; i < n; ++i){
-            aux = new Node<int>(rand()%100);
+            aux = new SingleNode<int>(rand()%100);
             if(i == 0){
                 setHead(aux);
                 it = getHead();
@@ -234,8 +236,8 @@ public:
         // Constructor copia
         unsigned int n = copy->size();
         if(n != 0){
-            setHead(new Node<int>(copy->getHead()->getValue()));
-            Node<int>* it_copy = copy->getHead()->getNext();
+            setHead(new SingleNode<int>(copy->getHead()->getValue()));
+            SingleNode<int>* it_copy = copy->getHead()->getNext();
             for(int i = 1; i < n; i++){
                 push_back(it_copy->getValue());
                 it_copy = it_copy->getNext();
@@ -249,15 +251,15 @@ public:
     List(int* array, int n){
         //Constructor  parametro,
         //llena una lista a partir de un array
-        auto it = new Node<int>(array[0]);
+        auto it = new SingleNode<int>(array[0]);
         setHead(it);
         for(int i = 1; i < n; i++){
-            it->setNext(new Node<int>(array[i]));
+            it->setNext(new SingleNode<int>(array[i]));
             it = it->getNext();
         }
     }
 
-    List(Node<int>* nodo){
+    List(SingleNode<int>* nodo){
         //Constructor por parametro,
         //retorna una lista con un nodo
         setHead(nodo);
@@ -267,11 +269,11 @@ public:
 
     ~List()= default;
 
-    Node<int> *getHead() const {
+    SingleNode<int> *getHead() const {
         return head;
     }
 
-    void setHead(Node<int> *head) {
+    void setHead(SingleNode<int> *head) {
         List::head = head;
     }
 
@@ -293,13 +295,13 @@ public:
         while(it->getNext() != nullptr){
             it = it->getNext();
         }
-        it->setNext(new Node<int>(element));
+        it->setNext(new SingleNode<int>(element));
     }
 
     // Inserta un elemento al inicio
     void push_front(const int& element){
-        auto new_node = new Node<int>(element);
-        new_node->setNext(new Node<int>(getHead()));
+        auto new_node = new SingleNode<int>(element);
+        new_node->setNext(new SingleNode<int>(getHead()));
         setHead(new_node);
     }
 
@@ -353,7 +355,7 @@ public:
     // Elimina toda la lista
     void clear(){
         int n = size();
-        Node<int>* it;
+        SingleNode<int>* it;
         for (int i = 0; i < n ; i++) {
             it = getHead();
             while(it->getNext()!= nullptr){
@@ -364,7 +366,7 @@ public:
     }
 
     // Inserta un elemento  en base a un puntero
-    void insert(Node<int>* ptr, const int& element){
+    void insert(SingleNode<int>* ptr, const int& element){
         ptr->setValue(element);
     }
 
@@ -403,3 +405,8 @@ public:
         return cd;
     };
 };
+*/
+typedef List<SingleNode<int>> SimpleList;
+typedef List<SingleNode<int>> CircularList;
+typedef List<DoubleNode<int>> DoubleList;
+typedef List<DoubleNode<int>> CircularDoubleList;

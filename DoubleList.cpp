@@ -36,7 +36,7 @@ public:
         this = DoubleLink(list_aux);
     }
 
-    DoubleList(Node<T>* nodo){
+    DoubleList(SingleNode<T>* nodo){
         //Constructor por parametro,
         //retorna una lista con un nodo
         setHead(nodo);
@@ -54,7 +54,7 @@ public:
 
     DoubleList* DoubleLink(List<T>* list){
         auto doubled = new DoubleList();
-        Node<T>* list_it = list->getHead();
+        SingleNode<T>* list_it = list->getHead();
         DoubleNode<T>* d_it = nullptr;
         int n = list->size();
         if(n!=0){
@@ -99,13 +99,13 @@ public:
         while(it->getNext() != nullptr){
             it = it->getNext();
         }
-        it->setNext(new Node<T>(element));
+        it->setNext(new SingleNode<T>(element));
     }
 
     // Inserta un elemento al inicio
     void push_front(const T& element){
         auto aux = getHead();
-        setHead(new Node<T>(element));
+        setHead(new SingleNode<T>(element));
         getHead()->setNext(aux);
     }
 
