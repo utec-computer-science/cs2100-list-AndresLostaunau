@@ -1,17 +1,15 @@
-#include "CircleList.cpp"
-
-template <typename T>
-class DoubleList{
+template<>
+class List<false, DoubleNodeType, int>{
 protected:
-    DoubleNode<T> *head;
+    DoubleNodeType *head;
 
 public:
-    DoubleList(DoubleList *copy){
+    List(DoubleList *copy){
         // Constructor copia
         unsigned int n = copy->size();
         if(n != 0){
-            setHead(new DoubleNode<T>(copy->getHead()->getValue()));
-            DoubleNode<T>* it_copy = copy->getHead();
+            setHead(new DoubleNodeType(copy->getHead()->getValue()));
+            DoubleNodeType* it_copy = copy->getHead()->getNext();
             for(int i = 1; i < n; i++){
                 push_back(it_copy->getValue());
                 it_copy = it_copy->getNext();
@@ -22,70 +20,56 @@ public:
 
     }
 
-    DoubleList(List<T> *copy){
-        auto list_aux = new List<T>(copy);
-        this = DoubleLink(list_aux);
-    }
-
-
-
-    DoubleList(T* array, int n){
+    List(int* array, int n){
         //Constructor  parametro,
         //llena una lista a partir de un array
-        auto list_aux = new List<T>(array, n);
-        this = DoubleLink(list_aux);
+        auto it = new DoubleNodeType(array[0]);
+        setHead(it);
+        for(int i = 1; i < n; i++){
+            it->setNext(new DoubleNodeType(array[i]));
+            it = it->getNext();
+        }
     }
 
-    DoubleList(SingleNode<T>* nodo){
+    List(DoubleNodeType* nodo){
         //Constructor por parametro,
         //retorna una lista con un nodo
         setHead(nodo);
     }
 
-    DoubleList(int n){
-        //Constructor por parametro,
-        //retorna un lista de randoms de tamaño n
-
-    }
-
-    DoubleList()= default;
-
-    ~DoubleList()= default;
-
-    DoubleList* DoubleLink(List<T>* list){
-        auto doubled = new DoubleList();
-        SingleNode<T>* list_it = list->getHead();
-        DoubleNode<T>* d_it = nullptr;
-        int n = list->size();
-        if(n!=0){
-            doubled->setHead(new DoubleNode<T>(list_it->getValue()));
-            list_it = list_it->getNext();
-            d_it = doubled->getHead();
-            for(int i = 1; i < n; i++){
-                d_it->setNext(new DoubleNode<T>(list_it->getValue()));
-                d_it->getNext()->setPrev(d_it);
-                d_it = d_it->getNext();
-                if(i!=n-1){
-                    list_it = list_it->getNext();
-                }
+    List(int n){
+        srand(time(NULL));
+        SingleNode<int>* aux = nullptr;
+        SingleNode<int>* it = nullptr;
+        for(int i = 0; i < n; ++i){
+            aux = new SingleNode<int>(rand()%100);
+            if(i == 0){
+                setHead(aux);
+                it = getHead();
+            }else{
+                it->setNext(aux);
+                it = it->getNext();
             }
         }
-        return doubled;
     }
 
-    DoubleNode<T> *getHead() const {
+    List()= default;
+
+    ~List()= default;
+
+    DoubleNodeType *getHead() const {
         return head;
     }
 
-    void setHead(DoubleNode<T> *head) {
-        DoubleList::head = head;
+    void setHead(DoubleNodeType *head) {
+        List::head = head;
     }
 
     // Retorna una referencia al primer elemento
-    T front(){ return this->getHead()->getValue();}
+    int front(){ return this->getHead()->getValue();}
 
     // Retorna una referencia al ultimo elemento
-    T back(){
+    int back(){
         auto it = getHead();
         while(it->getNext() != nullptr){
             it = it->getNext();
@@ -94,41 +78,47 @@ public:
     }
 
     // Inserta un elemento al final
-    void push_back(const T& element){
+    void push_back(const DoubleNodeType& element){
         auto it = getHead();
         while(it->getNext() != nullptr){
             it = it->getNext();
         }
-        it->setNext(new SingleNode<T>(element));
+        it->setNext(new DoubleNodeType(element));
     }
 
     // Inserta un elemento al inicio
-    void push_front(const T& element){
-        auto aux = getHead();
-        setHead(new SingleNode<T>(element));
-        getHead()->setNext(aux);
+    void push_front(const DoubleNodeType& element){
+        auto new_node = new DoubleNodeType(element);
+        new_node->setNext(new DoubleNodeType(getHead()));
+        setHead(new_node);
     }
 
     // Quita el ultimo elemento y retorna una referencia
-    T pop_back(){
+    DoubleNodeType pop_back(){
         auto it = getHead();
-        while(it->getNext()->getNext() != nullptr){
-            it = it->getNext();
+        if(it->getNext()!= nullptr){
+            while(it->getNext()->getNext()!= nullptr){
+                it = it->getNext();
+            }
+            auto popped = it->getNext();
+            it->setNext(nullptr);
+            return popped->getValue();
+        }else{
+            auto popped = it;
+            setHead(nullptr);
+            return popped->getValue();
         }
-        auto popped = it->getNext();
-        it->setNext(nullptr);
-        return popped->getValue();
     }
 
     // Quita el primer elemento y retorna una referencia
-    T pop_front(){
+    DoubleNodeType pop_front(){
         auto popped = getHead();
         this->setHead(popped->getNext());
         return popped->getValue();
     }
 
     // Acceso aleatorio
-    T& operator[] (int& n){
+    int operator[] (const int& n){
         auto it = getHead();
         for(int i = 0; i < n; i++){
             it = it->getNext();
@@ -138,7 +128,7 @@ public:
 
     // la lista esta vacia?
     bool empty(){
-        return this->getHead() == nullptr;
+        return (this->getHead() == nullptr);
     }
 
     // retorna el tamaño de la lista
@@ -159,28 +149,21 @@ public:
     // Elimina toda la lista
     void clear(){
         int n = size();
-        DoubleNode<T>* it;
-        for (int i = 0; i < n ; i++) {
-            it = getHead();
-            while(it->getNext()!= nullptr){
-                it->getNext();
-            }
-            delete it;
-        }
+        for(int i = 0; i < n; i++){pop_back();}
     }
 
     // Elimina un elemento en base a un puntero
-    void erase(DoubleNode<T>* ptr){
+    void erase(DoubleNodeType* ptr){
         ptr->setValue(NULL);
     };
 
     // Inserta un elemento  en base a un puntero
-    void insert(DoubleNode<T>* ptr, const T& element){
+    void insert(DoubleNodeType* ptr, const int& element){
         ptr->setValue(element);
     }
 
     // Elimina todos los elementos por similitud
-    void remove(const T& element){
+    void remove(const int& element){
         auto it = getHead();
         while(it->getNext()!= nullptr){
             if(it->getValue()==element){
@@ -191,39 +174,53 @@ public:
 
     // ordena la lista
     void sort(){
-        //No todo tipo de clases pueden ser sorteadas, asi que en la lista general será void, pero en los traits retornará una lista.
-        std::cout<<"Can't sort this type of list\n";
+        int n = size();
+        int aux_array[n];
+        int aux;
+        auto it = getHead();
+        for(int i = 0; i < n; i++){
+            aux_array[i] = it->getValue();
+            it = it->getNext();
+        }
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(aux_array[i]>aux_array[j]){
+                    aux = aux_array[i];
+                    aux_array[i] = aux_array[j];
+                    aux_array[j] = aux;
+                }
+            }
+        }
+        auto newList = new List(aux_array,n);
+        setHead(newList->getHead());
     };
 
     // invierte la lista
-    DoubleList& reverse(){
-        DoubleNode<T>* newHead = nullptr;
+    List& reverse(){
+        auto NewList = new DoubleList(new DoubleNodeType(this->pop_back()));
         int n = size();
-        DoubleNode<T>* it, newIt;
+        DoubleNodeType* newIt;
+        newIt = NewList->getHead();
         for (int i = 0; i < n ; i++) {
-            it = getHead();
-            while(it->getNext()!= nullptr){
-                it->getNext();
-            }
-            if(i == 0){
-                newHead = it;
-                newIt = newHead;
-            }else{
-                newIt->setNext(it);
-                newIt = it;
-            }
+            newIt->setNext(new DoubleNodeType(this->pop_back()));
+            newIt = newIt->getNext();
         }
-        this->setHead(newHead);
+        this->setHead(NewList->getHead());
+        return *NewList;
     }
 
     // Imprime la lista con cout
-    template<typename __T>
-    inline friend std::ostream& operator<<(std::ostream& cd, const List<__T>& list){
+    inline friend std::ostream& operator<<(std::ostream& cd, DoubleList& list){
         unsigned int n = list.size();
         for(int i = 0; i < n; i++){
-            cd<<list[i]<<" ";
+            cd<<list[i];
+            if(i!=n-1){
+                cd<<"->";
+            }
         }
         cd<<"\n";
         return cd;
     };
 };
+
+

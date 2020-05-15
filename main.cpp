@@ -1,30 +1,57 @@
 #include <iostream>
-#include "DoubleCircleList.cpp"
+#include "List.cpp"
+using namespace std;
 
-char t1Array[6] = {'p','r','u','e','b','a'};
-typedef char T1type;
-typedef int T3type;
+int tArray[6] = {4, 20, 6, 9, 0, 18};
+
 
 int main (int, char*[]){
-    //Test 1 (Construcción con array y sort generico)
-    auto t1 = new List<T1type>(t1Array,6);
-    std::cout<<"Size T1: "<<t1->size()<<"\n";
-    std::cout<<*t1;
+    cout<<"Test 1: Construccion con array y funcion size\n";
+    auto t1 = new DoubleList(tArray,6);
+    cout<<"Size T1: "<<t1->size()<<"\n";
+    cout<<*t1;
+
+    cout<<"\nTest 2: Sort\n";
     t1->sort();
-    //Test 2 (Copia de lista, push y pop)
-    auto t2 = new List<T1type>(t1);
-    std::cout<<"Size T2: "<<t2->size()<<"\n";
-    t2->push_front('A');
-    t2->push_back('s');
-    std::cout<<*t2;
+    cout<<*t1;
+
+    cout<<"\nTest 3: Copia de lista t1 a t2\n";
+    auto t2 = new DoubleList(t1);
+    cout<<*t2;
+
+    cout<<"\nTest 4: Push front(21), Push back (5)\n";
+    t2->push_front(21);
+    t2->push_back(5);
+    cout<<*t2;
+
+    cout<<"\nTest 5: Dos pop back y un pop front\n";
     t2->pop_back();
     t2->pop_back();
     t2->pop_front();
-    std::cout<<*t2;
-    //Test 3 (Trait sort y random)
-    auto t3 = new List<T3type>(10);
-    std::cout<<*t3;
-    t3->sort();
-    std::cout<<*t3;
+    cout<<*t2;
+
+    cout<<"\nTest 6: Random List de 8 elementos\n";
+    auto t3 = new DoubleList(8);
+    cout<<*t3;
+
+    cout<<"\nTest 7: Front y back\n";
+    cout<<"Front: "<<t3->front()<<endl;
+    cout<<"Back: "<<t3->back()<<endl;
+
+    cout<<"\nTest 8: Empty y clear\n";
+    for(int i = 0; i < 2; i++){
+        if(t3->empty()){
+            cout<<"Esta vacio.\n";
+        }else{
+            cout<<"No esta vacio. Vaciando\n";
+            t3->clear();
+        }
+    }
+
+    cout<<"\nTest 9: Reverse de t2\n";
+    t2->reverse();
+    cout<<*t2;
+
+    cout<<"\nTESTS DE LISTAS DOBLES LINEARES\n";
     return 1;
 }

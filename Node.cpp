@@ -14,18 +14,22 @@ public:
     void setValue(T value) {
         Node::value = value;
     }
-/*
-    Node* getNext()= default;
-    Node* setNext(Node* n)= default;
-    Node* getPrev()= default;
-    Node* setPrev(Node* n)= default;*/
 
+    template<typename _T>
+    void operator --(Node<_T>& nodo){
+        nodo = nodo->getPrev();
+    }
+
+    template<typename _T>
+    void operator ++(Node<_T>& nodo){
+        nodo = nodo->getNext();
+    }
 };
 
 template <typename T>
 class SingleNode: public Node<T>{
 private:
-    SingleNode<T> * next;
+    Node<T> * next;
 
 public:
     SingleNode(){SingleNode::next = nullptr;};
@@ -51,18 +55,14 @@ public:
 
     ~SingleNode(){
     }
-    /*
-    template<typename _T>
-    Node<_T>& operator ++(Node<_T>& nodo){
-        nodo = nodo->getNext();
-        return nodo;
-    }*/
+
 };
 
 template <typename T>
-class DoubleNode: public SingleNode<T>{
+class DoubleNode: public Node<T>{
 protected:
-    SingleNode<T>* prev;
+    Node<T>* next;
+    Node<T>* prev;
 
 public:
     DoubleNode(){
@@ -76,7 +76,12 @@ public:
         DoubleNode::prev = nullptr;
     }
 
-    SingleNode<T> *getPrev() const {
+    DoubleNode(DoubleNode* copy){
+        DoubleNode::value = copy->getValue();
+        DoubleNode::next = copy->getNext();
+    }
+
+    DoubleNode *getPrev() const {
         return prev;
     }
 
@@ -84,9 +89,14 @@ public:
         DoubleNode::prev = prev;
     }
 
-    template<typename _T>
-    void operator --(SingleNode<_T>& nodo){
-        nodo = nodo->getPrev();
+    DoubleNode *getNext() const {
+        return next;
     }
+
+    void setNext(Node<T> *next) {
+        DoubleNode::next = next;
+    }
+
+
 };
 

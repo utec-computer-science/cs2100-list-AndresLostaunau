@@ -13,9 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e38e5a6e-bdd1-4831-9a23-d3b508ec3179" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoubleList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DoubleList.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Node.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="5" column="91" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
+              <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -42,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            <state relative-caret-position="258">
+              <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -54,11 +52,45 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/List.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3465">
-              <caret line="165" column="15" selection-start-line="165" selection-start-column="15" selection-end-line="165" selection-end-column="15" />
+            <state relative-caret-position="1521">
+              <caret line="526" column="46" selection-start-line="526" selection-start-column="46" selection-end-line="526" selection-end-column="46" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#125#137#0" expanded="true" />
+                <element signature="e#125#171#0" expanded="true" />
+                <element signature="e#172#1602#1" />
+                <element signature="e#1937#1939#0" expanded="true" />
+                <element signature="e#2493#2806#0" />
+                <element signature="e#3156#3289#0" />
+                <element signature="e#3375#3595#0" />
+                <element signature="e#3601#3851#0" />
+                <element signature="e#3857#4085#0" />
+                <element signature="e#4091#4405#0" />
+                <element signature="e#4411#4611#0" />
+                <element signature="e#4617#4815#0" />
+                <element signature="e#4917#5257#0" />
+                <element signature="e#5263#5552#0" />
+                <element signature="e#5843#6377#0" />
+                <element signature="e#5558#5673#0" />
+                <element signature="e#5680#5820#0" />
+                <element signature="e#6078#6306#0" />
+                <element signature="e#6324#6854#0" />
+                <element signature="e#6860#7126#0" />
+                <element signature="e#7827#7829#0" expanded="true" />
+                <element signature="e#8377#8690#0" />
+                <element signature="e#8696#8829#0" />
+                <element signature="e#9541#9750#0" />
+                <element signature="e#9756#10006#0" />
+                <element signature="e#10246#10744#0" />
+                <element signature="e#10750#10950#0" />
+                <element signature="e#10956#11154#0" />
+                <element signature="e#11258#11598#0" />
+                <element signature="e#11604#11724#0" />
+                <element signature="e#11728#12262#0" />
+                <element signature="e#11852#11992#0" />
+                <element signature="e#11998#12255#0" />
+                <element signature="e#12261#12896#0" />
+                <element signature="e#12903#13339#0" />
+                <element signature="e#13345#13669#0" />
               </folding>
             </state>
           </provider>
@@ -67,13 +99,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Node.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+            <state relative-caret-position="379">
+              <caret line="92" selection-start-line="92" selection-end-line="92" />
               <folding>
                 <element signature="e#9#21#0" expanded="true" />
-                <element signature="e#738#750#0" expanded="true" />
-                <element signature="e#738#750#0" expanded="true" />
-                <element signature="e#1205#1218#0" expanded="true" />
+                <element signature="e#271#284#0" expanded="true" />
+                <element signature="e#374#387#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,23 +113,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DoubleList.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2583">
-              <caret line="123" column="5" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+            <state>
+              <caret selection-end-line="224" />
               <folding>
-                <element signature="e#30#42#0" expanded="true" />
-                <element signature="e#1004#1110#0" />
-                <element signature="e#1161#1214#0" />
-                <element signature="e#1390#1597#0" />
-                <element signature="e#1603#1833#0" />
-                <element signature="e#1839#2018#0" />
-                <element signature="e#2024#2326#0" />
-                <element signature="e#2332#2520#0" />
-                <element signature="e#2723#2813#0" />
-                <element signature="e#3453#3561#0" />
-                <element signature="e#3568#3699#0" />
-                <element signature="e#3705#3960#0" />
-                <element signature="e#3966#4194#0" />
-                <element signature="e#4765#4779#0" expanded="true" />
+                <element signature="e#8#10#0" expanded="true" />
+                <element signature="e#101#558#0" />
+                <element signature="e#564#877#0" />
+                <element signature="e#883#1016#0" />
+                <element signature="e#1022#1432#0" />
+                <element signature="e#1728#1937#0" />
+                <element signature="e#1943#2193#0" />
+                <element signature="e#2199#2427#0" />
+                <element signature="e#2433#2931#0" />
+                <element signature="e#2937#3137#0" />
+                <element signature="e#3143#3341#0" />
+                <element signature="e#3445#3785#0" />
+                <element signature="e#3791#3911#0" />
+                <element signature="e#4039#4179#0" />
+                <element signature="e#4185#4442#0" />
+                <element signature="e#4448#5083#0" />
+                <element signature="e#5090#5526#0" />
+                <element signature="e#5532#5856#0" />
               </folding>
             </state>
           </provider>
@@ -132,6 +167,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>++</find>
+      <find>SingleNode&lt;Sing</find>
+      <find>setV</find>
+      <find>SingleNode&lt;int</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,12 +178,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CircleList.cpp" />
         <option value="$PROJECT_DIR$/DoubleCircleList.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/DoubleList.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Node.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/List.cpp" />
       </list>
     </option>
@@ -227,33 +265,44 @@
       <workItem from="1588786776380" duration="2768000" />
       <workItem from="1589131524708" duration="3489000" />
       <workItem from="1589215468223" duration="18999000" />
-      <workItem from="1589406667298" duration="1925000" />
+      <workItem from="1589406667298" duration="2707000" />
+      <workItem from="1589493066305" duration="47000" />
+      <workItem from="1589573660713" duration="9302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39140000" />
+    <option name="totallyTimeSpent" value="49271000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2872483" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.295302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="CMake" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.33427763" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.39093485" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -287,36 +336,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DoubleList.h" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="91" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubleList.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2583">
-          <caret line="123" column="5" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#42#0" expanded="true" />
-            <element signature="e#1004#1110#0" />
-            <element signature="e#1161#1214#0" />
-            <element signature="e#1390#1597#0" />
-            <element signature="e#1603#1833#0" />
-            <element signature="e#1839#2018#0" />
-            <element signature="e#2024#2326#0" />
-            <element signature="e#2332#2520#0" />
-            <element signature="e#2723#2813#0" />
-            <element signature="e#3453#3561#0" />
-            <element signature="e#3568#3699#0" />
-            <element signature="e#3705#3960#0" />
-            <element signature="e#3966#4194#0" />
-            <element signature="e#4765#4779#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CircleList.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -336,36 +355,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Node.cpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+        <state relative-caret-position="105">
+          <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubleList.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="224" />
           <folding>
-            <element signature="e#9#21#0" expanded="true" />
-            <element signature="e#738#750#0" expanded="true" />
-            <element signature="e#738#750#0" expanded="true" />
-            <element signature="e#1205#1218#0" expanded="true" />
+            <element signature="e#8#10#0" expanded="true" />
+            <element signature="e#101#558#0" />
+            <element signature="e#564#877#0" />
+            <element signature="e#883#1016#0" />
+            <element signature="e#1022#1432#0" />
+            <element signature="e#1728#1937#0" />
+            <element signature="e#1943#2193#0" />
+            <element signature="e#2199#2427#0" />
+            <element signature="e#2433#2931#0" />
+            <element signature="e#2937#3137#0" />
+            <element signature="e#3143#3341#0" />
+            <element signature="e#3445#3785#0" />
+            <element signature="e#3791#3911#0" />
+            <element signature="e#4039#4179#0" />
+            <element signature="e#4185#4442#0" />
+            <element signature="e#4448#5083#0" />
+            <element signature="e#5090#5526#0" />
+            <element signature="e#5532#5856#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        <state relative-caret-position="258">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="e#9#21#0" expanded="true" />
+            <element signature="e#271#284#0" expanded="true" />
+            <element signature="e#374#387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/List.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3465">
-          <caret line="165" column="15" selection-start-line="165" selection-start-column="15" selection-end-line="165" selection-end-column="15" />
+        <state relative-caret-position="1521">
+          <caret line="526" column="46" selection-start-line="526" selection-start-column="46" selection-end-line="526" selection-end-column="46" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#125#137#0" expanded="true" />
+            <element signature="e#125#171#0" expanded="true" />
+            <element signature="e#172#1602#1" />
+            <element signature="e#1937#1939#0" expanded="true" />
+            <element signature="e#2493#2806#0" />
+            <element signature="e#3156#3289#0" />
+            <element signature="e#3375#3595#0" />
+            <element signature="e#3601#3851#0" />
+            <element signature="e#3857#4085#0" />
+            <element signature="e#4091#4405#0" />
+            <element signature="e#4411#4611#0" />
+            <element signature="e#4617#4815#0" />
+            <element signature="e#4917#5257#0" />
+            <element signature="e#5263#5552#0" />
+            <element signature="e#5843#6377#0" />
+            <element signature="e#5558#5673#0" />
+            <element signature="e#5680#5820#0" />
+            <element signature="e#6078#6306#0" />
+            <element signature="e#6324#6854#0" />
+            <element signature="e#6860#7126#0" />
+            <element signature="e#7827#7829#0" expanded="true" />
+            <element signature="e#8377#8690#0" />
+            <element signature="e#8696#8829#0" />
+            <element signature="e#9541#9750#0" />
+            <element signature="e#9756#10006#0" />
+            <element signature="e#10246#10744#0" />
+            <element signature="e#10750#10950#0" />
+            <element signature="e#10956#11154#0" />
+            <element signature="e#11258#11598#0" />
+            <element signature="e#11604#11724#0" />
+            <element signature="e#11728#12262#0" />
+            <element signature="e#11852#11992#0" />
+            <element signature="e#11998#12255#0" />
+            <element signature="e#12261#12896#0" />
+            <element signature="e#12903#13339#0" />
+            <element signature="e#13345#13669#0" />
           </folding>
         </state>
       </provider>
