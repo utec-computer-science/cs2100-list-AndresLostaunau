@@ -594,6 +594,7 @@ public:
                 it = it->getNext();
             }
         }
+        it->setNext(getHead());
     }
 
     List()= default;
@@ -661,9 +662,6 @@ public:
                 it->setNext(getHead());
                 return popped->getValue();
             }
-            auto popped = it->getNext();
-            it->setNext(getHead());
-            return popped->getValue();
         }else{
             auto popped = it;
             setHead(nullptr);
@@ -803,24 +801,28 @@ public:
             DoubleNodeType* it_copy = copy->getHead()->getNext();
             for(int i = 1; i < n; i++){
                 push_back(it_copy->getValue());
+                it_copy->getNext()->setPrev(it_copy);
                 it_copy = it_copy->getNext();
             }
+            it_copy->setNext(getHead());
+            it_copy->getNext()->setPrev(it_copy);
         }else{
             setHead(nullptr);
         }
-
     }
 
     List(int* array, int n){
         //Constructor  parametro,
         //llena una lista a partir de un array
-        auto it = new DoubleNodeType(array[0]);
-        setHead(it);
+        setHead(new DoubleNodeType(array[0]));
+        auto it = getHead();
         for(int i = 1; i < n; i++){
             it->setNext(new DoubleNodeType(array[i]));
-            it->getNext()->setPrev(it);
             it = it->getNext();
+            it->getNext()->setPrev(it);
         }
+        it->setNext(getHead());
+        it->getNext()->setPrev(it);
     }
 
     List(DoubleNodeType* nodo){
@@ -844,6 +846,8 @@ public:
                 it = it->getNext();
             }
         }
+        it->setNext(getHead());
+        it->getNext()->setPrev(it);
     }
 
     List()= default;
@@ -858,56 +862,56 @@ public:
         List::head = head;
     }
 
-    /*
-    DoubleList* DoubleLink(SingleList* list){
-        auto NewList = new DoubleList(new DoubleNodeType(list->getHead()->getValue()));
-        auto it = NewList->getHead();
-        int n = list->size();
-        for(int i = 0; i < n; i++){
-        }
-        return NewList;
-    }*/
-
 // Retorna una referencia al primer elemento
     int front(){ return this->getHead()->getValue();}
 
 // Retorna una referencia al ultimo elemento
-    int back(){
-        auto it = getHead();
-        while(it->getNext() != nullptr){
-            it = it->getNext();
-        }
-        return it->getValue();
-    }
+    int back(){ return this->getHead()->getPrev()->getValue();}
 
 // Inserta un elemento al final
-    void push_back(const DoubleNodeType& element){
-        auto it = getHead();
-        while(it->getNext() != nullptr){
+    void push_back(const int element){
+        DoubleNodeType* it = getHead();
+        while((it->getNext() != getHead())&&(it->getNext()!= nullptr)){
             it = it->getNext();
         }
         it->setNext(new DoubleNodeType(element));
+        it->getNext()->setNext(getHead());
         it->getNext()->setPrev(it);
     }
 
-// Inserta un elemento al inicio
-    void push_front(const DoubleNodeType& element){
-        auto new_node = new DoubleNodeType(element);
-        new_node->setNext(new DoubleNodeType(getHead()));
-        new_node->getNext()->setPrev(new_node);
-        setHead(new_node);
+    // Inserta un elemento al inicio
+    void push_front(const int element){
+        DoubleNodeType* it = getHead();
+        while((it->getNext() != getHead())&&(it->getNext()!= nullptr)){
+            it = it->getNext();
+        }
+        it->setNext(new DoubleNodeType(element));
+        it->getNext()->setNext(getHead());
+        setHead(it->getNext());
+        it->getNext()->setPrev(it);
     }
 
 // Quita el ultimo elemento y retorna una referencia
-    DoubleNodeType pop_back(){
+    int pop_back(){
         auto it = getHead();
-        if(it->getNext()!= nullptr){
-            while(it->getNext()->getNext()!= nullptr){
+        int n = size();
+        if(it->getNext() != getHead()){
+            while(it->getNext()->getNext() != getHead()){
                 it = it->getNext();
             }
-            auto popped = it->getNext();
-            it->setNext(nullptr);
-            return popped->getValue();
+            if(it == it->getNext()->getNext()){
+                auto popped = it->getNext();
+                it->setNext(it);
+                return popped->getValue();
+            }else if(it==it->getNext()){
+                setHead(nullptr);
+                return 0;
+            }else{
+                auto popped = it->getNext();
+                it->setNext(getHead());
+                it->getNext()->setPrev(it);
+                return popped->getValue();
+            }
         }else{
             auto popped = it;
             setHead(nullptr);
@@ -915,10 +919,15 @@ public:
         }
     }
 
-// Quita el primer elemento y retorna una referencia
-    DoubleNodeType pop_front(){
+    // Quita el primer elemento y retorna una referencia
+    int pop_front(){
+        auto it = getHead();
         auto popped = getHead();
         this->setHead(popped->getNext());
+        while(it->getNext()!=popped){
+            it = it->getNext();
+        }
+        it->setNext(popped->getNext());
         return popped->getValue();
     }
 
@@ -940,8 +949,8 @@ public:
     unsigned int size(){
         int counter = 1;
         auto it = getHead();
-        if(it != nullptr){
-            while(it->getNext()!= nullptr){
+        if((it != nullptr) && (it->getNext()!=getHead())){
+            while((it->getNext()!= nullptr)&& (it->getNext()!=getHead())){
                 counter++;
                 it = it->getNext();
             }
