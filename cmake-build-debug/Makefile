@@ -122,87 +122,6 @@ cs2100_list_AndresLostaunau/fast:
 	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/build
 .PHONY : cs2100_list_AndresLostaunau/fast
 
-CircleList.obj: CircleList.cpp.obj
-
-.PHONY : CircleList.obj
-
-# target to build an object file
-CircleList.cpp.obj:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.obj
-.PHONY : CircleList.cpp.obj
-
-CircleList.i: CircleList.cpp.i
-
-.PHONY : CircleList.i
-
-# target to preprocess a source file
-CircleList.cpp.i:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.i
-.PHONY : CircleList.cpp.i
-
-CircleList.s: CircleList.cpp.s
-
-.PHONY : CircleList.s
-
-# target to generate assembly for a file
-CircleList.cpp.s:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/CircleList.cpp.s
-.PHONY : CircleList.cpp.s
-
-DoubleCircleList.obj: DoubleCircleList.cpp.obj
-
-.PHONY : DoubleCircleList.obj
-
-# target to build an object file
-DoubleCircleList.cpp.obj:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.obj
-.PHONY : DoubleCircleList.cpp.obj
-
-DoubleCircleList.i: DoubleCircleList.cpp.i
-
-.PHONY : DoubleCircleList.i
-
-# target to preprocess a source file
-DoubleCircleList.cpp.i:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.i
-.PHONY : DoubleCircleList.cpp.i
-
-DoubleCircleList.s: DoubleCircleList.cpp.s
-
-.PHONY : DoubleCircleList.s
-
-# target to generate assembly for a file
-DoubleCircleList.cpp.s:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleCircleList.cpp.s
-.PHONY : DoubleCircleList.cpp.s
-
-DoubleList.obj: DoubleList.cpp.obj
-
-.PHONY : DoubleList.obj
-
-# target to build an object file
-DoubleList.cpp.obj:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.obj
-.PHONY : DoubleList.cpp.obj
-
-DoubleList.i: DoubleList.cpp.i
-
-.PHONY : DoubleList.i
-
-# target to preprocess a source file
-DoubleList.cpp.i:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.i
-.PHONY : DoubleList.cpp.i
-
-DoubleList.s: DoubleList.cpp.s
-
-.PHONY : DoubleList.s
-
-# target to generate assembly for a file
-DoubleList.cpp.s:
-	$(MAKE) -f CMakeFiles\cs2100_list_AndresLostaunau.dir\build.make CMakeFiles/cs2100_list_AndresLostaunau.dir/DoubleList.cpp.s
-.PHONY : DoubleList.cpp.s
-
 List.obj: List.cpp.obj
 
 .PHONY : List.obj
@@ -293,15 +212,6 @@ help:
 	@echo ... cs2100_list_AndresLostaunau
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... CircleList.obj
-	@echo ... CircleList.i
-	@echo ... CircleList.s
-	@echo ... DoubleCircleList.obj
-	@echo ... DoubleCircleList.i
-	@echo ... DoubleCircleList.s
-	@echo ... DoubleList.obj
-	@echo ... DoubleList.i
-	@echo ... DoubleList.s
 	@echo ... List.obj
 	@echo ... List.i
 	@echo ... List.s
