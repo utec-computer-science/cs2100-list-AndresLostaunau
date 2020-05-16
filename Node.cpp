@@ -29,7 +29,7 @@ public:
 template <typename T>
 class SingleNode: public Node<T>{
 private:
-    Node<T> * next;
+    SingleNode<T> * next;
 
 public:
     SingleNode(){SingleNode::next = nullptr;};
@@ -61,8 +61,8 @@ public:
 template <typename T>
 class DoubleNode: public Node<T>{
 protected:
-    Node<T>* next;
-    Node<T>* prev;
+    DoubleNode<T>* next;
+    DoubleNode<T>* prev;
 
 public:
     DoubleNode(){
@@ -85,7 +85,7 @@ public:
         return prev;
     }
 
-    void setPrev(SingleNode<T> *prev) {
+    void setPrev(DoubleNode<T> *prev) {
         DoubleNode::prev = prev;
     }
 
@@ -93,7 +93,7 @@ public:
         return next;
     }
 
-    void setNext(Node<T> *next) {
+    void setNext(DoubleNode<T> *next) {
         DoubleNode::next = next;
     }
 
