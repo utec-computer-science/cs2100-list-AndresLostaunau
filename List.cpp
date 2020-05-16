@@ -649,6 +649,18 @@ public:
             while(it->getNext()->getNext() != getHead()){
                 it = it->getNext();
             }
+            if(it == it->getNext()->getNext()){
+                auto popped = it->getNext();
+                it->setNext(it);
+                return popped->getValue();
+            }else if(it==it->getNext()){
+                setHead(nullptr);
+                return 0;
+            }else{
+                auto popped = it->getNext();
+                it->setNext(getHead());
+                return popped->getValue();
+            }
             auto popped = it->getNext();
             it->setNext(getHead());
             return popped->getValue();
